@@ -4,7 +4,7 @@ import { uuidv4 } from 'https://jslib.k6.io/k6-utils/1.4.0/index.js';
 
 export const options = {
     scenario:{
-        vus: 1
+        vus: 2
   }
 }
 
