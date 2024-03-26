@@ -10,10 +10,10 @@ export const options = {
 
 export default function () {
     let correlation_id = uuidv4();
-    const url_token = `https://stg.login.account.rakuten.com/util/gc?tracking_id=${correlation_id}&client_id=wallet`;
+    const url_token = ``;
     // sleep(1);
     const payload_body = JSON.stringify({
-      "page_type": "LOGIN_START"
+      
     });
     const param_header = {
       headers: {
