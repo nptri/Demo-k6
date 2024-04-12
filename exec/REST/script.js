@@ -1,5 +1,5 @@
-import {get_Data_User} from "./user-file/API/getDataUser.js";
-import {update_NewUser} from "./user-file/API/updateNewUser.js"
+import {get_Data_User} from "../../user-file/API/REST/getDataUser.js";
+import {update_NewUser} from "../../user-file/API/REST/updateNewUser.js"
 
 export const options = {
     scenarios:{

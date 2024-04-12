@@ -1,6 +1,6 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
-import { baseURL, endpoint_2 } from '../httpconf/httpconf.js';
+import { baseURL, endpoint_2 } from '../../httpconf/httpconf.js';
 
 export function update_NewUser () {
     const url_endpoint_2 = baseURL + endpoint_2;

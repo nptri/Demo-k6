@@ -1,6 +1,6 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
-import { baseURL, endpoint_1 } from '../httpconf/httpconf.js';
+import { baseURL, endpoint_1 } from '../../httpconf/httpconf.js';
 export function get_Data_User (){
     const url_endpoint_1 = baseURL + endpoint_1;
     const request_Call = http.get(url_endpoint_1);
