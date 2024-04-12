@@ -1,12 +1,14 @@
-import { Client, StatusOK } from 'k6/net/grpc';
-import { check, sleep } from 'k6';
+// import { Client, StatusOK } from 'k6/net/grpc';
+// import { check, sleep } from 'k6';
+import {UNARY_gRPC} from '../../user-file/API/gRPC/gRPC_Demo.js';
 
-const client = new Client();
-client.load(['/Users/ts-nguyenphuc.tri/Desktop/project/k6/user-file/API/gRPC/protobuf'], '/hello.proto'); //define proto file
+
+// const client = new Client();
+// client.load(['/Users/ts-nguyenphuc.tri/Desktop/project/k6/user-file/API/gRPC/protobuf'], '/hello.proto'); //define proto file
 
 export const options = {
     scenarios:{
-        getUser_then_UpdateUser: {
+        UNARY_gRPC_Scenario: {
           executor: 'constant-arrival-rate', // https://grafana.com/docs/k6/latest/using-k6/scenarios/executors/
           duration: 10000,
           rate: 1,
@@ -17,15 +19,5 @@ export const options = {
 }
 
 export default function () {
-    client.connect('grpcbin.test.k6.io:9001', {});
-    const data = { greeting: 'TriNP' };
-    const response = client.invoke('hello.HelloService/SayHello', data);
-
-    check(response, {
-        'status is OK': (responseBody) => responseBody && responseBody.status == StatusOK,
-    });
-
-    console.log(JSON.stringify(response.message));
-
-    client.close();
+    UNARY_gRPC();
 }
